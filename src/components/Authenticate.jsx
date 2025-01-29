@@ -5,7 +5,7 @@ function Authenticate({ token }) {
     const [successMessage, setSuccessMessage] = useState(null);
     const [error, setError] = useState(null);
     const [modalMessage, setModalMessage] = useState('');
-    const [isModalOpen, setIsModalOpen] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
 
     async function handleClick() {
@@ -21,12 +21,16 @@ function Authenticate({ token }) {
                     }
                 }
             );
-            const result = await response.json();
-            setSuccessMessage(result.message);
-            setModalMessage(result.message);
-        }
 
-        catch (error) {
+            const result = await response.json();
+            if (response.ok) {
+                setSuccessMessage(result.message);
+                setModalMessage('Get to the Beaches!');
+            } else {
+                setError(result.error);
+                setModalMessage('No Beaches for You!');
+            }
+        } catch (error) {
             setError(error.message);
             setModalMessage(error.message);
         }
