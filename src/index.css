@@ -1,0 +1,44 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-image: url(./assets/image/pexels-pixabay-67566.jpg);
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-shadow: 2px 3px 3px #a52606;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: min-content;
+}
+
+label {
+  font-weight: 700;
+  color: rgb(95, 0, 0);
+}
+
+input {
+  padding: 7px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 2px solid #cccccc;
+  border-radius: 2px;
+
+}
+
+button {
+  background-color: bisque;
+  cursor: pointer;
+  border: 0.5px solid orangered;
+}
+
+button:hover {
+  background-color: rgb(253, 217, 162);
+}
